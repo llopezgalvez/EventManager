@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportePlatos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="051f63c4-dc1d-43d6-84ab-bce4a2fc6ba1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Fondo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[call sp_ListarPlatos();]]>
+	</queryString>
+	<field name="codigoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoTipoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="72b21740-bf04-4556-937c-59e54cf94c71"/>
+				<imageExpression><![CDATA[$P{Fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="118" splitType="Stretch">
+			<staticText>
+				<reportElement x="38" y="59" width="197" height="44" forecolor="#FFFFFF" uuid="c0e363a2-61ec-4a55-9e96-5977831b12a3"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="30"/>
+				</textElement>
+				<text><![CDATA[Platos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="38" y="35" width="80" height="20" uuid="3f7e9112-e04a-4c89-8542-2becdd0496b2"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Cod. Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="35" width="72" height="20" uuid="76bfefae-8d8e-45eb-a63d-755af7ead10e"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="35" width="100" height="20" uuid="c06c2558-57ae-42c6-81be-43e776490448"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Nombre Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="35" width="100" height="20" uuid="5a555a5d-6d36-4e87-a210-2414f08d7497"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="35" width="100" height="20" uuid="04d52ca1-894a-407c-8a7f-c2e645e4eca2"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="15"/>
+				</textElement>
+				<text><![CDATA[Precio Plato]]></text>
+			</staticText>
+			<line>
+				<reportElement x="38" y="53" width="494" height="1" uuid="bd1bbc96-6219-483d-abf6-71283d00ee82"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="63" y="3" width="36" height="20" uuid="24c41345-a109-4ec6-b90c-8c6cb9691407"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="3" width="37" height="20" uuid="139f3ac8-5c4c-4255-bde5-8cecf3483814"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="3" width="100" height="20" uuid="90ec781c-0245-4a52-abef-53696ae78698"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="3" width="100" height="20" uuid="3102620a-ffff-4c32-9c1b-de70a7b788ea"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="3" width="59" height="20" uuid="077087cb-cd38-4a2d-807f-7f2fd9438c1b"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precioPlato}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="38" y="23" width="494" height="1" uuid="989e56d7-1b81-4044-ba87-e859a456c1d7"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

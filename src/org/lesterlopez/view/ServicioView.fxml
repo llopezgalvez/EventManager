@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lesterlopez.controller.ServicioController">
+   <children>
+      <AnchorPane prefHeight="471.0" prefWidth="185.0" style="-fx-background-color: #f8b623;">
+         <children>
+            <VBox layoutX="-3.0" layoutY="168.0" prefHeight="205.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Nuevo">
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/AgregarIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Eliminar">
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/EliminarIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Editar">
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/EditarIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Reporte">
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/ReporteIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="88.0" fitWidth="55.0" layoutX="61.0" layoutY="392.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/HomeIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="110.0" prefWidth="154.0" style="-fx-background-color: #5bba4a; -fx-background-radius: 15 20 15 20;">
+         <children>
+            <Label layoutX="40.0" layoutY="6.0" text="Servicio">
+               <font>
+                  <Font name="Bernard MT Condensed" size="25.0" />
+               </font></Label>
+            <ImageView fitHeight="71.0" fitWidth="95.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/ServicioIcon1.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="494.0" fitWidth="851.0" layoutX="184.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.6;">
+         <image>
+            <Image url="@../image/FondoPlantilla.jpg" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="grpFecha" layoutX="192.0" layoutY="14.0" prefHeight="144.0" prefWidth="683.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="127.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="233.0" minWidth="10.0" prefWidth="159.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="267.0" minWidth="10.0" prefWidth="197.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Codigo Empresa" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Lugar De Servicio" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Fecha Servicio" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Tipo De Servicio" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Código Servicio">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Hora Del Servicio" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Teléfono" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="20.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="txtTipoServicio" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtLugarServicio" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Bernard MT Condensed" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTelefono" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="196.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Bernard MT Condensed" size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cmbCodigoEmpresa" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="29.0" prefWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtCodigoServicio" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="196.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="15.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </TextField>
+            <JFXTimePicker fx:id="jfxTimePicker" defaultColor="BLACK" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="28.0" prefWidth="204.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tblServicios" layoutX="192.0" layoutY="164.0" onMouseClicked="#seleccionarElemento" prefHeight="293.0" prefWidth="728.0">
+        <columns>
+          <TableColumn fx:id="colCodigoServicio" text="Cod. Servicio" />
+          <TableColumn fx:id="colFechaServicio" prefWidth="90.0" text="Fecha Servicio" />
+            <TableColumn fx:id="colTipoServicio" prefWidth="130.0" text="Tipo De Servicio" />
+            <TableColumn fx:id="colHoraServicio" prefWidth="105.0" text="Hora Del Servicio" />
+            <TableColumn fx:id="colLugarServicio" prefWidth="153.0" text="Lugar de Servicio" />
+            <TableColumn fx:id="colTelefono" prefWidth="82.0" text="Teléfono" />
+            <TableColumn fx:id="colCodigoEmpresa" prefWidth="87.0" text="Cod. Empresa" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="888.0" layoutY="14.0" onMouseClicked="#ventanaEmpresa" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/BackIcon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServicios" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d27f7e72-7eb2-4e3a-80ee-08ba3499902c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="36"/>
+	<parameter name="Fondo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select * , E.nombreEmpresa from Servicios S
+	inner join Empresas E
+		on S.codigoEmpresa = E.codigoEmpresa;]]>
+	</queryString>
+	<field name="codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaServicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="d71ebd57-cbcc-40e7-b10d-3bfdf83bb6a9"/>
+				<imageExpression><![CDATA[$P{Fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="123" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="67" width="210" height="46" forecolor="#FFFFFF" uuid="c7bcde14-b1f2-4f66-b0bb-bda230b019ad"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="30"/>
+				</textElement>
+				<text><![CDATA[Servicios]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<line>
+				<reportElement x="27" y="47" width="520" height="1" uuid="730d2d44-4ca4-48b7-928e-a14ffdb2b193"/>
+			</line>
+			<staticText>
+				<reportElement x="108" y="28" width="36" height="20" uuid="ae5000c7-f21e-489c-8fab-270003c0621f"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="179" y="28" width="69" height="20" uuid="b4300df8-4e97-46d0-90d7-d857c1bd0559"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold"/>
+				</textElement>
+				<text><![CDATA[Tipo Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="28" width="30" height="20" uuid="691002f4-4752-429f-b1f1-18b7082665d5"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="28" width="100" height="20" uuid="27f68c50-6d67-4c1a-a4be-6585251c8ba7"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold"/>
+				</textElement>
+				<text><![CDATA[Lugar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="28" width="52" height="20" uuid="d814c67b-db34-4b09-8ec6-132b5c294ab6"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="487" y="27" width="48" height="20" uuid="fb9026b5-c087-44ce-a36f-7ff5d0a2d120"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="27" y="20" width="520" height="1" uuid="fa0aa985-d73c-4cf7-998c-9272844b4003"/>
+			</line>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="108" y="5" width="49" height="20" uuid="9a27e415-d846-448d-8350-79559831fc04"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="179" y="5" width="90" height="20" uuid="6f2a5ca2-5613-41a6-b991-565a17cd8b13"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="290" y="5" width="41" height="20" uuid="e9de00fd-ee34-49f0-a0d9-20b48c363cbd"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="5" width="126" height="20" uuid="7eca4019-a63d-4e0e-a9e4-117947b348ef"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugarServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="27" y="5" width="65" height="20" uuid="36768c57-b407-449c-8965-0f7abebb3037"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="487" y="5" width="48" height="20" uuid="f89cf244-f9da-4806-9f1e-964509216cb7"/>
+				<textElement>
+					<font fontName="Arial Rounded MT Bold" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

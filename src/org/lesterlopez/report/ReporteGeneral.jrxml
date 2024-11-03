@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteGeneral" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37b3240d-ebe0-44d3-ba9d-34980ae1c7db">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1360"/>
+	<parameter name="codEmpresa" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Fondo" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select
+                E.nombreEmpresa,
+                E.direccion,
+                E.telefono,
+                P.fechaSolicitud,
+                P.cantidadPresupuesto,
+                S.fechaServicio,
+                S.tipoServicio,
+                S.horaServicio,
+                S.telefonoContacto,
+                SE.fechaEvento,
+                SE.horaEvento,
+                SE.lugarEvento,
+                EM.nombresEmpleado,
+                EM.apellidosEmpleado,
+                EM.direccionEmpleado,
+                TE.descripcion as descripcionTipoEmpleado,
+                PL.cantidad,
+                PL.nombrePlato,
+                PL.descripcion as descripcionPlato,
+                PL.precioPlato,
+                TP.descripcion as descripcionTipoPlato,
+                PD.nombreProducto,
+                PD.cantidadProducto
+                from Empresas E
+                inner join Presupuesto P
+                on E.codigoEmpresa = P.codigoEmpresa
+                inner join Servicios S
+                on S.codigoEmpresa = E.codigoEmpresa
+                inner join Servicios_has_Empleados SE
+                on SE.codigoServicio = S.codigoServicio
+                inner join Empleados EM
+                on EM.codigoEmpleado = SE.codigoEmpleado
+                inner join TipoEmpleado TE
+                on TE.codigoTipoEmpleado = EM.codigoTipoEmpleado
+                inner join Servicios_has_Platos SP
+                on SP.codigoServicio = S.codigoServicio
+                inner join Platos PL
+                on PL.codigoPlato = SP.codigoPlato
+                inner join TipoPlatos TP
+                on TP.codigoTipoPlato = PL.codigoTipoPlato
+                inner join Productos_has_Platos PP
+                on PP.codigoPlato = PL.codigoPlato
+                inner join Productos PD
+                on PD.codigoProducto = PP.codigoProducto
+                where E.codigoEmpresa = $P{codEmpresa}]]>
+	</queryString>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaSolicitud" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadPresupuesto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaServicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaEvento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaEvento" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarEvento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionEmpleado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionTipoEmpleado" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String"/>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionTipoPlato" class="java.lang.String"/>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidadProducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752">
+			<image isUsingCache="true">
+				<reportElement x="0" y="0" width="572" height="752" uuid="e3b384f3-9a7d-4789-9584-f7efa120ce8b"/>
+				<imageExpression><![CDATA[$P{Fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="145" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="70" width="136" height="26" forecolor="#FFFFFF" uuid="d16a94bd-239a-43ab-a240-f9bb2cb2bb29"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="20"/>
+				</textElement>
+				<text><![CDATA[Reporte General]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="383" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="27" width="95" height="20" uuid="468a3f06-5bec-4f6e-be9a-d0487c14d284"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre Empresa: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="47" width="95" height="20" uuid="cf1f23f4-fd02-4d11-9a2c-3f63044530f4"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Dirección Empresa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="67" width="95" height="20" uuid="65b11256-f5bd-4c03-af3c-05fa15499c24"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Teléfono Empresa:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="47" width="114" height="20" uuid="156725cc-abad-471a-aeac-88430045f5a9"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad Presupuesto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="150" width="87" height="20" uuid="2f6cc4ad-9355-4e47-b04b-76ff3a3dd0c5"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Tipo Servicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="170" width="85" height="20" uuid="367ac189-32a4-4fef-9af5-ea4445045aa3"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Hora Del Servicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="190" width="85" height="20" uuid="4425ea1c-2778-4e70-9ea1-9346cc4be2ed"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Lugar Servicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="27" width="114" height="20" uuid="792a7a31-626d-41d2-9107-768a376cd26c"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha Solicitud:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="130" width="87" height="20" uuid="6117d67a-8fda-4a36-a9aa-3da42f238731"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha Servicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="130" width="59" height="20" uuid="91533e50-9dbe-48ca-8b5e-cb63d113712f"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombres:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="150" width="59" height="20" uuid="befe3a2a-9c37-4400-a95b-1a50e04a38d8"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Apellidos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="312" width="76" height="20" uuid="dee44348-5400-4cfc-ac5d-99e3d0bd7935"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Descripción:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="272" width="76" height="20" uuid="74291d0c-a474-43ef-a18c-05b83e51c8a0"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Cantidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="292" width="76" height="20" uuid="056c442c-f75c-4665-a98c-484da292863d"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre Plato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="10" width="114" height="18" forecolor="#999999" uuid="0dd17144-d1bc-4885-a339-99d4d54ebafc"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="15"/>
+				</textElement>
+				<text><![CDATA[Datos Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="10" width="114" height="18" forecolor="#999999" uuid="77d5b9c6-e0ba-4840-9ae5-e0f72fb34029"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="15"/>
+				</textElement>
+				<text><![CDATA[Datos Presupuesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="332" width="76" height="20" uuid="cce6c20f-1e53-4f8a-95a9-1d9b362868c5"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Precio Plato:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="110" width="114" height="20" forecolor="#999999" uuid="86ac6185-520b-40ea-8e31-9e1053563b3f"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="15"/>
+				</textElement>
+				<text><![CDATA[Datos Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="110" width="114" height="20" forecolor="#999999" uuid="1b8753ea-6a85-4c80-895f-b9d4464f9123"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="15"/>
+				</textElement>
+				<text><![CDATA[Datos Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="38" y="252" width="114" height="20" forecolor="#999999" uuid="27c15972-6bd8-4d6b-aa4f-01ecccb3fd48"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="15"/>
+				</textElement>
+				<text><![CDATA[Datos Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="170" width="59" height="20" uuid="d69a0192-7f77-450e-ab0a-81ecfe09ce4c"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<text><![CDATA[Descripción:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="114" y="312" width="257" height="20" uuid="47d8c717-548c-42c8-805e-7cf629a72116"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="27" width="100" height="20" uuid="eb7adeaf-1028-4e60-9ecc-a9b929f2ff5a"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="47" width="142" height="20" uuid="948bc797-dfb8-430b-8311-fd76fbeb6b0d"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="67" width="100" height="20" uuid="ab5c83d9-3547-42cc-84fc-f3d00080a8cb"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="405" y="28" width="100" height="20" uuid="e7807395-0758-4134-816f-9e5d6f33d49b"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaSolicitud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="47" width="126" height="20" uuid="1798f39b-a47f-456c-ba42-f1510d0d756a"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadPresupuesto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="125" y="130" width="100" height="20" uuid="1c40a591-4813-4536-9e43-0382d3d266eb"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="150" width="100" height="20" uuid="add8ca38-76b7-4800-89e7-1bba275c2cb4"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipoServicio}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm">
+				<reportElement x="125" y="170" width="100" height="20" uuid="b77e9ee4-2d0f-4953-9c9f-db91a1b83109"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="190" width="100" height="20" uuid="fe595255-9cf9-4019-8c7c-8737729a3f64"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lugarEvento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="272" width="100" height="20" uuid="b0fe3a08-d485-4ee6-b38f-d80f524ffdea"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="292" width="257" height="20" uuid="4fb52a01-c65b-477a-ac6d-2c6631140543"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="129" width="126" height="20" uuid="e48fe19b-dfcc-4dbe-815f-dda150162dc5"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="149" width="139" height="20" uuid="d750bc00-2e74-4fcf-8064-c43cfb76f408"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellidosEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="114" y="332" width="100" height="20" uuid="0f5f5d22-64c5-4171-88ff-1c48a35d4125"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precioPlato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="170" width="155" height="20" uuid="7be75b3b-388c-4ab7-bc46-a45276baeca1"/>
+				<textElement>
+					<font fontName="Bernard MT Condensed" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcionTipoEmpleado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

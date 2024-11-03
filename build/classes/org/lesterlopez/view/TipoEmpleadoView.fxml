@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="797.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lesterlopez.controller.TipoEmpleadoController">
+   <children>
+      <AnchorPane prefHeight="476.0" prefWidth="185.0" style="-fx-background-color: #f8b623;">
+         <children>
+            <VBox layoutX="4.0" layoutY="215.0" prefHeight="205.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css">
+               <children>
+                  <Button fx:id="btnNuevo" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Nuevo">
+                     <graphic>
+                        <ImageView fx:id="imgNuevo" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/AgregarIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Eliminar">
+                     <graphic>
+                        <ImageView fx:id="imgEliminar" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/EliminarIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEditar" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Editar">
+                     <graphic>
+                        <ImageView fx:id="imgEditar" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/EditarIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnReporte" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="35.0" prefWidth="184.0" stylesheets="@../resource/TonysKinal.css" text="   Reporte">
+                     <graphic>
+                        <ImageView fx:id="imgReporte" fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../image/ReporteIcon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="Bernard MT Condensed" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ImageView fitHeight="88.0" fitWidth="55.0" layoutX="66.0" layoutY="415.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/HomeIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="imgEmpleado" fitHeight="55.0" fitWidth="66.0" layoutX="69.0" layoutY="149.0" onMouseClicked="#ventanaEmpleado" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/EmpleadosIcon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="115.0" prefWidth="160.0" style="-fx-background-color: #5bba4a; -fx-background-radius: 15 20 15 20;">
+         <children>
+            <ImageView fitHeight="80.0" fitWidth="89.0" layoutX="40.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/TipoEmpleadoIcon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="8.0" layoutY="-2.0" text="Tipo Empleado">
+               <font>
+                  <Font name="Bernard MT Condensed" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="506.0" fitWidth="865.0" layoutX="184.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.6;">
+         <image>
+            <Image url="@../image/FondoPlantilla.jpg" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="237.0" layoutY="19.0" prefHeight="102.0" prefWidth="506.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="224.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="356.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Código Tipo Empleado">
+               <font>
+                  <Font name="Bernard MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Descripción" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodigoTipoEmpleado" editable="false" prefHeight="30.0" prefWidth="298.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="15.0" />
+               </font></TextField>
+            <TextField fx:id="txtDescripcionTipoEmpleado" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Bernard MT Condensed" size="15.0" />
+               </font></TextField>
+         </children>
+      </GridPane>
+      <TableView fx:id="tblEmpleados" layoutX="207.0" layoutY="137.0" onMouseClicked="#seleccionarElemento" prefHeight="316.0" prefWidth="566.0">
+        <columns>
+          <TableColumn fx:id="colCodigoTipoEmpleado" prefWidth="162.0" text="Código Tipo Empleado" />
+          <TableColumn fx:id="colDescripcionTipoEmpleado" prefWidth="403.0" text="Descripción" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

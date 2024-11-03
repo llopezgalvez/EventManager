@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="654.0" stylesheets="@../resource/TonysKinal.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lesterlopez.controller.ProgramadorController">
+   <children>
+      <ImageView fitHeight="756.0" fitWidth="1237.0" layoutX="-366.0" layoutY="-141.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FondoProgramador.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="313.0" fitWidth="319.0" layoutX="171.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/CuadroFoto.jpg" />
+         </image>
+      </ImageView>
+      <Label id="nombre" fx:id="lblNombreFull" layoutX="289.0" layoutY="365.0" text="Lester René López Gálvez">
+         <font>
+            <Font name="Bernard MT Condensed" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="289.0" layoutY="413.0" text="IN5AV">
+         <font>
+            <Font name="Bernard MT Condensed" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="289.0" layoutY="464.0" text="2022064">
+         <font>
+            <Font name="Bernard MT Condensed" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNombre" layoutX="29.0" layoutY="365.0" text="Nombre:">
+         <font>
+            <Font name="Bernard MT Condensed" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCodigoTecnico" layoutX="29.0" layoutY="413.0" text="Código Técnico:">
+         <font>
+            <Font name="Bernard MT Condensed" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCarne" layoutX="29.0" layoutY="464.0" text="Número De Carné:">
+         <font>
+            <Font name="Bernard MT Condensed" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="503.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FotoKinal.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="277.0" fitWidth="238.0" layoutX="224.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FotoPerfil.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="42.0" layoutX="8.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/HomeIcon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

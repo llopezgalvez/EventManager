@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="423.0" prefWidth="416.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.lesterlopez.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="424.0" fitWidth="432.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Logo2022064.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutY="2.0" stylesheets="@../resource/TonysKinal.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Módulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresa" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="Tipo Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="Tipo Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProducto" text="Productos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tablas de Unión">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProductoHasPlato" text="ProductoHasPlato" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServicioHasPlato" text="ServicioHasPlato" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServicioHasEmpleado" text="ServicioHasEmpleado" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Reportes">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#reporteEmpresa" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#reporteTipoEmpleado" text="Tipo Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#reporteTipoPlato" text="Tipo Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#reporteProducto" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#reporteServicio" text="Servicios" />
+                  <MenuItem mnemonicParsing="false" onAction="#reporteEmpleado" text="Empleados" />
+                  <MenuItem mnemonicParsing="false" onAction="#reportePlato" text="Platos" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" onAction="#ventanaProgramador" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Programador" />
+            </items>
+          </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <ImageView fitHeight="34.0" fitWidth="33.0" layoutX="379.0" layoutY="384.0" onMouseClicked="#ventanaLogin" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/CerrarSesion.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>
